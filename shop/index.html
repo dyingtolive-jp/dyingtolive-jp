@@ -4,11 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#000000">
-<title>DYINGTOLIVE.jp // SHOP</title>
-<meta name="description" content="Cheap parts. Pay with card, DM to order, Zelle to pay.">
+<title>Shop — DYING TO LIVE | Decals & Cheap Parts</title>
+<meta name="description" content="House decals + cheap parts for static builds. DM to order, Zelle to pay.">
 <meta property="og:title" content="DYING TO LIVE — shop the drop">
 <meta property="og:description" content="DTL Originals: house decals + apparel. Static builds only.">
-<meta property="og:image" content="https://dyingtolive-jp.github.io/dyingtolive-jp/shop/img/m1.jpg">
+<meta property="og:image" content="https://dyingtolive-jp.github.io/dyingtolive-jp/shop/img/d1.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:image" content="https://dyingtolive-jp.github.io/dyingtolive-jp/shop/img/d1.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"DYING TO LIVE","url":"https://dyingtolive-jp.github.io/dyingtolive-jp/","description":"House decals and cheap parts for static builds. DM to order, Zelle to pay.","address":{"@type":"PostalAddress","addressLocality":"Houston","addressRegion":"TX","addressCountry":"US"},"sameAs":["https://www.instagram.com/dyingtolive.jp/"]}</script>
+<!-- Meta Pixel (INERT until you paste a real Pixel ID): remove these comment markers, replace PIXEL_ID, and ads can track shop visits.
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','PIXEL_ID');fbq('track','PageView');</script>
+-->
 <meta property="og:url" content="https://dyingtolive-jp.github.io/dyingtolive-jp/shop/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../logo.png">
@@ -681,6 +687,12 @@
   <div><div class="n">03</div><h3>WE SHIP</h3><p>we confirm, we order, it ships to you. ★</p></div>
 </div>
 
+<div style="max-width:1200px;margin:44px auto 0;padding:0 18px 10px;color:#8f8f96;font-size:13px;line-height:1.9;">
+<h2 style="font-family:'Anton',sans-serif;font-weight:400;font-size:30px;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:14px;"><span style="color:#63636d;">//</span> QUESTIONS</h2>
+<p><b style="color:#fff;">HOW DO I ORDER?</b> Add to cart, send the order to our DM (or email it), pay by Zelle. We confirm every order in the DM before anything ships.</p>
+<p><b style="color:#fff;">SHIPPING?</b> Shipping confirmed in the DM before you pay — never after.</p>
+<p><b style="color:#fff;">CONTACT?</b> DM @dyingtolive.jp or email collinpatterson694@gmail.com.</p>
+</div>
 <footer class="page">
   <div class="dm">DM US <span>★</span> @dyingtolive.jp</div>
   <div class="links">
@@ -759,7 +771,7 @@
 <script>
 // ticker
 (function () {
-  const items = ['<b>★</b> NEW DECAL DROP', '<b>★</b> 10% OFF YOUR FIRST ORDER', 'CARD PAY COMING SOON', '<b>★</b> DYINGTOLIVE.JP', 'STATIC BUILDS ONLY', '<b>★</b> DYING TO LIVE ORIGINALS'];
+  const items = ['<b>★</b> NEW DECAL DROP', '<b>★</b> 10% OFF YOUR FIRST ORDER', 'DYING TO LIVE ORIGINALS', '<b>★</b> DYINGTOLIVE.JP', 'STATIC BUILDS ONLY', '<b>★</b> DYING TO LIVE ORIGINALS'];
   const half = items.map(t => '<span>' + t + '</span>').join('');
   document.getElementById('ticker').innerHTML = half + half;
 })();
@@ -875,19 +887,19 @@ const PRODUCTS = [
     note: "peeker eyes · rear window essential · vinyl",
     img: "img/t13.jpg",
     stripe: "" },
-  { id: "d1", cat: "decals", name: "White Cross Decal — 6in", price: 15, fresh: 1, limited: 1,
+  { id: "d1", cat: "decals", name: "White Cross Decal — 6in", price: 15, fresh: 1,
     note: "white die-cut vinyl · our cross logo ★",
     img: "img/d1.jpg",
     stripe: "" },
-  { id: "d2", cat: "decals", name: "URL Windshield Decal", price: 15, fresh: 1, limited: 1,
+  { id: "d2", cat: "decals", name: "URL Windshield Decal", price: 15, fresh: 1,
     note: "white die-cut vinyl · long windshield format ★",
     img: "img/d2.jpg",
     stripe: "" },
-  { id: "d3", cat: "decals", name: "Cross Banner Decal — 6in", price: 15, fresh: 1, limited: 1,
+  { id: "d3", cat: "decals", name: "Cross Banner Decal — 6in", price: 15, fresh: 1,
     note: "white die-cut vinyl · gothic cross banner ★",
     img: "img/d3.jpg",
     stripe: "" },
-  { id: "d4", cat: "decals", name: "Reaper Peeker Decal — 6in", price: 15, fresh: 1, limited: 1,
+  { id: "d4", cat: "decals", name: "Reaper Peeker Decal — 6in", price: 15, fresh: 1,
     note: "white die-cut vinyl · reaper peeker ★",
     img: "img/d4.jpg",
     stripe: "" },
@@ -949,7 +961,7 @@ function renderGrid() {
     el.dataset.id = p.id;
     el.style.animationDelay = Math.min(i * 35, 420) + "ms";
     const addBtn = p.soon
-      ? '<button class="notify" data-notify>NOTIFY ME ↓</button>'
+      ? '<button class="notify" data-notify data-id="' + p.id + '">NOTIFY ME ↓</button>'
       : p.stock === 0
       ? '<button class="add" disabled>SOLD OUT</button>'
       : '<button class="add" data-id="' + p.id + '">ADD +</button>';
@@ -999,7 +1011,7 @@ renderGrid();
     const el = document.createElement("div");
     el.className = "ocard";
     const cta = p.soon
-      ? '<button class="notify" data-notify>NOTIFY ME ↓</button>'
+      ? '<button class="notify" data-notify data-id="' + p.id + '">NOTIFY ME ↓</button>'
       : '<button class="add" data-id="' + p.id + '">ADD +</button>';
     el.innerHTML =
       '<div class="imgwrap"><img src="' + p.img + '" alt="' + p.name + '" loading="lazy">' +
@@ -1012,7 +1024,7 @@ renderGrid();
   });
   rail.addEventListener("click", e => {
     const nb = e.target.closest("[data-notify]");
-    if (nb) { notifyMe(); return; }
+    if (nb) { notifyMe(nb.dataset.id); return; }
     const btn = e.target.closest(".add");
     if (!btn) return;
     addToCart(btn.dataset.id, 1);
@@ -1091,11 +1103,11 @@ function openQV(id) {
   renderPairs(id);
   const cardBtn = document.getElementById("qvCard");
   if (p.stripe) {
+    cardBtn.style.display = "";
     cardBtn.disabled = false;
     cardBtn.textContent = "PAY WITH CARD ★";
   } else {
-    cardBtn.disabled = true;
-    cardBtn.textContent = "CARD PAY — COMING SOON";
+    cardBtn.style.display = "none";
   }
   qv.classList.add("open");
   qvOverlay.classList.add("open");
@@ -1119,7 +1131,7 @@ document.getElementById("qvPlus").onclick = () => {
 document.getElementById("qvAdd").onclick = () => {
   if (!qvId) return;
   const p = PRODUCTS.find(x => x.id === qvId);
-  if (p && p.soon) { closeQV(); notifyMe(); return; }
+  if (p && p.soon) { closeQV(); notifyMe(qvId); return; }
   addToCart(qvId, qvQty);
   closeQV();
 };
@@ -1147,7 +1159,9 @@ let dcRate = 0;
 try { dcRate = parseFloat(localStorage.getItem("dtl_dc") || "0") || 0; } catch (e) { dcRate = 0; }
 const payableTotal = () => cartTotal() * (1 - dcRate);
 
-function notifyMe() {
+let notifyProduct = "";
+function notifyMe(id) {
+  notifyProduct = id || "";
   const f = document.getElementById("nlForm");
   if (f) {
     f.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -1212,10 +1226,13 @@ function renderCart() {
     '<div class="dc-row"><input id="dcInput" placeholder="DISCOUNT CODE" aria-label="Discount code" value="' + (dcRate > 0 ? "DYING10" : "") + '"><button id="dcApply">APPLY</button></div>' +
     totalsHtml +
     '<div class="total-row"><span>TOTAL</span><span class="amt">' + money(total) + "</span></div>" +
-    '<div class="notice">★ CARD PAYMENTS COMING SOON — tap any product for the pay-with-card button when it lights up.</div>' +
+    '<div class="notice">★ SHIPPING — Shipping confirmed in the DM before you pay — never after.</div>' +
+    '<div class="notice">Card checkout is coming — Zelle today.</div>' +
     '<div class="step"><div class="step-label"><b>STEP 1</b> — SEND THE ORDER TO OUR DM</div>' +
     '<button class="bigbtn" id="dmCheckout">PLACE ORDER ★</button>' +
     '<div class="notice">' + WARNING_TEXT + "</div></div>" +
+    '<div class="step"><div class="step-label"><b>OR</b> — NO INSTAGRAM? EMAIL THE ORDER</div>' +
+    '<a class="ghostbtn" id="emailCheckout" href="#">EMAIL ORDER ★</a></div>' +
     '<div class="step"><div class="step-label"><b>STEP 2</b> — PAY FOR YOUR ORDER WITH ZELLE</div>' +
     '<div class="zelle-box"><div class="lbl">ZELLE TO</div>' +
     '<div class="num">' + ZELLE_NUMBER + '</div>' +
@@ -1223,6 +1240,12 @@ function renderCart() {
     '<button class="ghostbtn" id="copyZelle">COPY ZELLE DETAILS</button></div>' +
     '<div class="hint">shoots you straight to our DM —<br>paste the order and hit send ★</div>';
   document.getElementById("dmCheckout").onclick = checkoutDM;
+  document.getElementById("emailCheckout").onclick = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent("DYINGTOLIVE ORDER");
+    const body = encodeURIComponent(orderText() + "\n\nShip to:\nName:\nAddress:");
+    window.location.href = "mailto:collinpatterson694@gmail.com?subject=" + subject + "&body=" + body;
+  };
   document.getElementById("copyZelle").onclick = copyZelle;
   document.getElementById("dcApply").onclick = () => {
     const v = document.getElementById("dcInput").value.trim().toUpperCase();
@@ -1263,10 +1286,11 @@ function copyText(t, msg) {
 function fallbackCopy(t, done) {
   const ta = document.createElement("textarea");
   ta.value = t;
-  ta.style.position = "fixed"; ta.style.opacity = "0";
-  document.body.appendChild(ta); ta.select();
-  try { document.execCommand("copy"); done(); } catch (e) { toast("COPY FAILED — LONG-PRESS TO COPY"); }
-  document.body.removeChild(ta);
+  ta.style.cssText = "width:100%;height:160px;background:#0b0b0c;color:#fff;border:1px solid #c9c9d4;padding:10px;font-size:12px;margin-top:10px;";
+  ta.readOnly = true;
+  document.getElementById("cartItems").prepend(ta);
+  ta.select();
+  try { document.execCommand("copy"); done(); } catch (e) { toast("LONG-PRESS THE ORDER TEXT TO COPY IT"); }
 }
 
 function checkoutDM() {
@@ -1301,14 +1325,15 @@ function toast(msg) {
 /* ============ 10%-off offer popup + newsletter ============ */
 function listSignup(email) {
   // zero-backend email capture: posts to FormSubmit, lands in Collin's inbox.
-  // First-ever signup triggers a one-time activation email he must confirm.
-  try {
-    fetch("https://formsubmit.co/ajax/collinpatterson694@gmail.com", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify({ email: email, _subject: "DYINGTOLIVE — new list signup", message: "10% off list signup from the dyingtolive-jp site" })
-    }).catch(function () {});
-  } catch (e) {}
+  const msg = notifyProduct
+    ? "Notify-me signup for product " + notifyProduct + " from the dyingtolive-jp site"
+    : "10% off list signup from the dyingtolive-jp site";
+  notifyProduct = "";
+  return fetch("https://formsubmit.co/ajax/collinpatterson694@gmail.com", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify({ email: email, _subject: "DYINGTOLIVE — new list signup", message: msg })
+  }).then(r => { if (!r.ok) throw 0; });
 }
 (function () {
   const overlay = document.getElementById("offerOverlay");
@@ -1324,22 +1349,24 @@ function listSignup(email) {
     const input = document.getElementById("offerEmail");
     const em = input.value.trim();
     if (!em || em.indexOf("@") < 0) { input.style.borderColor = "#f5b942"; input.focus(); return; }
-    listSignup(em);
-    document.getElementById("offerForm").style.display = "none";
-    document.getElementById("offerDone").style.display = "";
-    mark();
+    listSignup(em).then(() => {
+      document.getElementById("offerForm").style.display = "none";
+      document.getElementById("offerDone").style.display = "";
+      mark();
+    }).catch(() => { toast("COULDN'T JOIN — DM US INSTEAD"); });
   };
   addEventListener("keydown", e => { if (e.key === "Escape" && overlay.classList.contains("open")) { close(); mark(); } });
-  if (!seen) setTimeout(() => overlay.classList.add("open"), 5000);
+  if (!seen) setTimeout(() => { if (!cartQty()) overlay.classList.add("open"); }, 25000);
   const nlForm = document.getElementById("nlForm");
   if (nlForm) nlForm.addEventListener("submit", e => {
     e.preventDefault();
     const em = document.getElementById("nlEmail").value.trim();
     if (!em || em.indexOf("@") < 0) return;
-    listSignup(em);
-    nlForm.style.display = "none";
-    document.getElementById("nlOk").style.display = "";
-    mark();
+    listSignup(em).then(() => {
+      nlForm.style.display = "none";
+      document.getElementById("nlOk").style.display = "";
+      mark();
+    }).catch(() => { toast("COULDN'T JOIN — DM US INSTEAD"); });
   });
 })();
 
