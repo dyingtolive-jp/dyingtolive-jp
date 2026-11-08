@@ -284,8 +284,10 @@
   .offer-overlay.open { opacity: 1; pointer-events: auto; }
   .offer-box { background: #060607; border: 1px solid var(--line); max-width: 430px; width: 100%; padding: 36px 28px 30px; text-align: center; position: relative; transform: translateY(14px) scale(.98); transition: transform .25s cubic-bezier(.2,.9,.25,1); box-shadow: 0 30px 80px rgba(0,0,0,.8); }
   .offer-overlay.open .offer-box { transform: none; }
-  .offer-close { position: absolute; top: 8px; right: 12px; background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; }
+  .offer-close { position: absolute; top: 2px; right: 6px; background: none; border: none; color: var(--muted); font-size: 28px; cursor: pointer; width: 44px; height: 44px; line-height: 44px; text-align: center; padding: 0; }
   .offer-close:hover { color: #fff; }
+  .offer-skip { display: block; width: 100%; background: none; border: none; color: var(--muted); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; cursor: pointer; padding: 14px 0 2px; font-family: 'Roboto', sans-serif; }
+  .offer-skip:hover { color: #fff; }
   .okicker { font-size: 10px; letter-spacing: 5px; color: var(--chrome-lo); font-weight: 900; text-transform: uppercase; }
   .offer-box h3 { font-family: 'Anton', sans-serif; font-weight: 400; font-size: 42px; letter-spacing: 2px; margin: 12px 0 10px; text-transform: uppercase; line-height: 1; }
   .offer-box p { font-size: 11px; color: var(--muted); letter-spacing: 1.5px; line-height: 1.8; margin-bottom: 18px; text-transform: uppercase; font-weight: 500; }
@@ -419,6 +421,7 @@
       <p>drop your email for <b>10% off</b> your first order<br>+ first dibs on every drop.</p>
       <input type="email" id="offerEmail" placeholder="your@email.com" autocomplete="email" aria-label="Email">
       <button class="obtn" id="offerClaim">CLAIM 10% OFF ★</button>
+      <button class="offer-skip" id="offerSkip" type="button">NO THANKS — JUST BROWSING</button>
       <p class="offer-fine">no spam. just drops. Your email is only used for drops and order updates. Never sold, never shared.</p>
     </div>
     <div id="offerDone" style="display:none">
@@ -454,6 +457,7 @@
     const mark = () => { try { localStorage.setItem("dtl_offer_seen", "1"); } catch (e) {} };
     const close = () => overlay.classList.remove("open");
     document.getElementById("offerClose").onclick = () => { close(); mark(); };
+    document.getElementById("offerSkip").onclick = () => { close(); mark(); };
     overlay.addEventListener("click", e => { if (e.target === overlay) { close(); mark(); } });
     document.getElementById("offerGo").onclick = () => { close(); mark(); location.href = "shop/"; };
     document.getElementById("offerClaim").onclick = () => {
