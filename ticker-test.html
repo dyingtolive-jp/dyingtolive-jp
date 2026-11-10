@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TICKER REPRO — temporary diagnostic, delete after</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; color: #fff; font-family: 'Roboto', sans-serif; padding: 20px; }
+  h2 { font-size: 18px; letter-spacing: 2px; margin: 26px 0 8px; text-transform: uppercase; }
+  h2:first-child { margin-top: 0; }
+  p.note { font-size: 12px; color: #888; margin-bottom: 8px; }
+  .wrap-flex { display: flex; flex-direction: column; align-items: center; min-height: 0; background: #111; }
+  .spacer { height: 300px; }
+  /* ---- shared ticker pieces (copied from the live site) ---- */
+  .ticker {
+    width: 100%; border-bottom: 1px solid #202024;
+    overflow: hidden; white-space: nowrap; background: #000;
+    position: relative; z-index: 5;
+    height: 38px; display: flex; align-items: center; line-height: 20px;
+  }
+  .ticker-inner { display: inline-block; flex: none; animation: tick 28s linear infinite; will-change: transform; }
+  .ticker span { font-weight: 900; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; padding: 0 18px; color: #8f8f96; }
+  .ticker span b { color: #c9c9d4; font-weight: 900; }
+  @keyframes tick { to { transform: translateX(-50%); } }
+  /* ---- variant overrides ---- */
+  #v2wrap { display: block; }
+  #v3 .ticker-inner { animation: none; will-change: auto; }
+  #v4 .ticker { display: block; height: auto; padding: 9px 0; }
+  #v5 .ticker { flex: none; }
+</style>
+</head>
+<body>
+  <h2>V1 — homepage exact (flex column body, ticker 38px flex, animation)</h2>
+  <p class="note">If this strip is black/empty, the homepage structure itself is the trigger.</p>
+  <div class="wrap-flex" id="v1">
+    <div class="ticker"><div class="ticker-inner"></div></div>
+    <div class="spacer"></div>
+  </div>
+
+  <h2>V2 — body NOT flex (everything else same as V1)</h2>
+  <p class="note">If V2 shows text but V1 does not, body flex is the trigger.</p>
+  <div id="v2wrap">
+    <div class="ticker"><div class="ticker-inner"></div></div>
+    <div class="spacer"></div>
+  </div>
+
+  <h2>V3 — V1 with NO animation / NO will-change on the inner</h2>
+  <p class="note">If V3 shows text but V1 does not, the animation is the trigger.</p>
+  <div class="wrap-flex" id="v3">
+    <div class="ticker"><div class="ticker-inner"></div></div>
+    <div class="spacer"></div>
+  </div>
+
+  <h2>V4 — V1 but ticker is display:block + padding (no fixed height, no flex)</h2>
+  <p class="note">If V4 shows text but V1 does not, display:flex on the ticker is the trigger.</p>
+  <div class="wrap-flex" id="v4">
+    <div class="ticker"><div class="ticker-inner"></div></div>
+    <div class="spacer"></div>
+  </div>
+
+  <h2>V5 — V1 but ticker has flex:none</h2>
+  <p class="note">If V5 shows text but V1 does not, flex-shrink on the ticker is the trigger.</p>
+  <div class="wrap-flex" id="v5">
+    <div class="ticker"><div class="ticker-inner"></div></div>
+    <div class="spacer"></div>
+  </div>
+
+<script>
+  const items = ['<b>★</b> DYINGTOLIVE.JP', 'STATIC BUILDS ONLY', '<b>★</b> NEW DECAL DROP', '<b>★</b> 10% OFF YOUR FIRST ORDER', 'DYING TO LIVE ORIGINALS', '<b>★</b> DYING TO LIVE ORIGINALS'];
+  const half = items.map(t => '<span>' + t + '</span>').join('');
+  document.querySelectorAll('.ticker-inner').forEach(el => { el.innerHTML = half + half; });
+</script>
+</body>
+</html>
